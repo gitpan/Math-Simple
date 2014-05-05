@@ -8,20 +8,27 @@ Math::Simple  -  Very simple, commonly used math routines
 
 =head1 VERSION
 
-Version "2.0.0"
+Version "2.0.1"
 
 =cut
-our $VERSION='2.0.0';
+
+###############################################################
+#	Changes
+#
+# - 2.0.1 - minor typo's
+#	- 2.0.0	- First public release (no tests yet)
+#
+our $VERSION='2.0.1';
 
 
 { package Math::Simple;
   BEGIN {
      require $_.".pm" && $_->import for qw(strict warnings);
   }
-  use Xporter;
-
   our @EXPORT = qw(max min log10);
   our @EXPORT_OK = qw(log2 logb);
+  use Xporter;
+
 
   {
     my @logs;
@@ -73,15 +80,18 @@ our $VERSION='2.0.0';
 Very simple math routines that I end up re-using in many progs and
 libified for easy access.  
 
-Currently five function, three exported by default.
-Default exports are min(), max() and log10().
-Optional exports are C<log2> and C<logb>.  Note on <logb>: it returns
-a log in any base, with the base as the first param, and number as
-the 2nd param, but given 1 parameter (the base), it will return a 
-function ref that only returns that base.
+Currently, there are five functions, with three exported by default.
+Default exports are C<min>, C<max> and C<log10>.
+Optional exports are C<log2> and C<logb>.  
 
-Math::Simple uses Xporter, so including C<logb> or C<log2> doesn't break the
-defaults import list see L<Xporter>.
+Note on C<logb>: it returns a log in any base, with the base 
+as the first param, and number as the 2nd param, but given 
+1 parameter (the base), it will return a function ref (a.k.a. a 
+I<curried function>, that, when called, only returns logarithms
+in that base.
+
+C<Math::Simple> uses C<Xporter>, so including C<logb> or 
+C<log2> doesn't break the default C<EXPORT> list see L<Xporter>.
 
 =cut
 
