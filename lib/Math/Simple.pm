@@ -8,14 +8,14 @@ Math::Simple  -  Very simple, commonly used math routines
 
 =head1 VERSION
 
-Version "2.1.1"
+Version "2.1.2"
 
 =cut
 
 ###############################################################
 #	Changes
+#	- 2.1.2 - removed spurious inclusion of uneeded header (Types::Core)
 #	- 2.1.1 - reformat header as it didn't seem to index properly
-
 #	- 2.1.0 - add gcd function;  
 #					- Update docs &  clarify logb usage
 #					- added more tests to test suite
@@ -26,7 +26,7 @@ Version "2.1.1"
 #	- 2.0.0	- First public release (no tests yet)
 #
 package Math::Simple;
-our $VERSION='2.1.1';
+our $VERSION='2.1.2';
 
 { 
 
@@ -40,7 +40,6 @@ our $VERSION='2.1.1';
 	our @EXPORT = qw(max min logb log10 gcd);
 	our @EXPORT_OK = qw(log2 );
 	use Xporter;
-	use Types::Core;
 
 	{
 		sub logb($;$){
