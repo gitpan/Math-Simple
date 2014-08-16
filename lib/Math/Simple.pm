@@ -8,12 +8,14 @@ Math::Simple  -  Very simple, commonly used math routines
 
 =head1 VERSION
 
-Version "2.1.0"
+Version "2.1.1"
 
 =cut
 
 ###############################################################
 #	Changes
+#	- 2.1.1 - reformat header as it didn't seem to index properly
+
 #	- 2.1.0 - add gcd function;  
 #					- Update docs &  clarify logb usage
 #					- added more tests to test suite
@@ -23,8 +25,10 @@ Version "2.1.0"
 # - 2.0.1 - minor typo's
 #	- 2.0.0	- First public release (no tests yet)
 #
-{ package Math::Simple;
-	our $VERSION=2.1.0;
+package Math::Simple;
+our $VERSION=2.1.1;
+
+{ 
 
 
 	our @__baselogs__;
