@@ -26,7 +26,7 @@ Version "2.1.1"
 #	- 2.0.0	- First public release (no tests yet)
 #
 package Math::Simple;
-our $VERSION=2.1.1;
+our $VERSION='2.1.1';
 
 { 
 
